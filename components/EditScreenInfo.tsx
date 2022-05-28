@@ -4,12 +4,12 @@ import { StyleSheet, TouchableOpacity } from "react-native";
 
 import Colors from "../constants/Colors";
 import { MonoText } from "./StyledText";
-import { Text, View } from "./Themed";
+import { Text, ViewContainer } from "./Themed";
 
 export default function EditScreenInfo({ path }: { path: string }) {
   return (
-    <View>
-      <View style={styles.getStartedContainer}>
+    <ViewContainer>
+      <ViewContainer style={styles.getStartedContainer}>
         <Text
           style={styles.getStartedText}
           lightColor="rgba(0,0,0,0.8)"
@@ -18,13 +18,13 @@ export default function EditScreenInfo({ path }: { path: string }) {
           Open up the code for this screen:
         </Text>
 
-        <View
+        <ViewContainer
           style={[styles.codeHighlightContainer, styles.homeScreenFilename]}
           darkColor="rgba(255,255,255,0.05)"
           lightColor="rgba(0,0,0,0.05)"
         >
           <MonoText>{path}</MonoText>
-        </View>
+        </ViewContainer>
 
         <Text
           style={styles.getStartedText}
@@ -34,17 +34,17 @@ export default function EditScreenInfo({ path }: { path: string }) {
           Change any of the text, save the file, and your app will automatically
           update.
         </Text>
-      </View>
+      </ViewContainer>
 
-      <View style={styles.helpContainer}>
+      <ViewContainer style={styles.helpContainer}>
         <TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
           <Text style={styles.helpLinkText} lightColor={Colors.light.tint}>
             Tap here if your app does not automatically update after making
             changes
           </Text>
         </TouchableOpacity>
-      </View>
-    </View>
+      </ViewContainer>
+    </ViewContainer>
   );
 }
 

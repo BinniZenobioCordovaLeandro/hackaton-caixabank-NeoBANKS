@@ -45,6 +45,10 @@ export type TextProps = ThemeProps &
       | "label";
   };
 export type ViewProps = ThemeProps & DefaultView["props"];
+export type ViewContainerProps = ThemeProps &
+  DefaultView["props"] & {
+    withBackground?: boolean;
+  };
 
 export function Text(props: TextProps) {
   const { style, lightColor, darkColor, ...otherProps } = props;
@@ -100,9 +104,18 @@ export function Text(props: TextProps) {
   );
 }
 
-export function View(props: ViewProps) {
+export function ViewContainer(props: ViewContainerProps) {
   const { style, lightColor, darkColor, ...otherProps } = props;
-  return <DefaultView style={[style]} {...otherProps} />;
+  let localStyle = {};
+  if (props.withBackground) {
+    localStyle = {
+      backgroundColor: useThemeColor(
+        { light: lightColor, dark: darkColor },
+        "background",
+      ),
+    };
+  }
+  return <DefaultView style={[localStyle, style]} {...otherProps} />;
 }
 
 export function ViewCard(props: ViewProps) {
