@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components/native";
-import { Text, ViewContainer, Screen } from "../../../components/Themed";
+import {
+  Text,
+  ViewContainer,
+  Screen,
+  Button,
+} from "../../../components/Themed";
 import { Card } from "../../../components/card/card";
 
 export const ScreenContainer = styled(Screen)``;
@@ -29,6 +34,7 @@ export const TitleLogo = styled(Text)`
 
 export const BodyContainer = styled(ViewContainer)`
   flex-direction: row;
+  flex-wrap: wrap;
   padding: 24px 25px 30px 25px;
 `;
 
@@ -47,7 +53,7 @@ export const BodyTransaction = styled(Text)`
 `;
 
 export const SmallCellContainer = styled(ViewContainer)`
-  flex: 3;
+  float: left;
 `;
 
 export const CardResumeContainer = styled(ViewContainer)`
@@ -73,10 +79,13 @@ export const LabelTextCard = styled(Text)`
 `;
 
 export const CardPieContainer = styled(ViewContainer)`
+  min-width: 388px;
   margin-top: 15px;
 `;
 
-export const CardHistoryContainer = styled(ViewContainer)``;
+export const CardHistoryContainer = styled(ViewContainer)`
+  min-width: 388px;
+`;
 
 export const CardGraphic = styled(Card)`
   min-height: 325px;
@@ -88,6 +97,11 @@ export const PieChartWrapper = styled(ViewContainer)`
 `;
 
 export const LargeCellContainer = styled(ViewContainer)`
-  flex: 8;
+  float: left;
   margin-left: 22px;
+`;
+
+export const ActionButton = styled(Button)`
+  height: 32px;
+  width: 32px;
 `;

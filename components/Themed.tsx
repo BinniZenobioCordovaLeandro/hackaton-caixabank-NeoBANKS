@@ -53,7 +53,7 @@ export type ViewContainerProps = ThemeProps &
 
 export type ButtonProps = ThemeProps &
   DefaultTouchableWithoutFeedback["props"] & {
-    type?: "primary" | "secondary" | "tertiary";
+    type?: "primary" | "underline" | "outline";
     focused?: boolean;
   };
 
@@ -155,7 +155,7 @@ export function Button(props: ButtonProps) {
   const {
     style,
     type,
-    focused = true,
+    focused = false,
     lightColor,
     darkColor,
     ...otherProps
@@ -173,12 +173,26 @@ export function Button(props: ButtonProps) {
         };
         break;
 
-      case "secondary":
+      case "underline":
         localStyle = {
           height: 61,
           borderStyle: "solid",
           borderBottomColor: focused ? "#6979F8" : undefined,
-          borderBottomWidth: 5,
+          color: focused ? "#6979F8" : undefined,
+          borderBottomWidth: focused ? 5 : undefined,
+          justifyContent: "center",
+          alignItems: "center",
+          alignContent: "center",
+        };
+        break;
+
+      case "outline":
+        localStyle = {
+          height: 61,
+          borderStyle: "solid",
+          borderColor: focused ? "#6979F8" : "#E5E5E5",
+          borderRadius: 4,
+          borderWidth: 1,
           justifyContent: "center",
           alignItems: "center",
           alignContent: "center",

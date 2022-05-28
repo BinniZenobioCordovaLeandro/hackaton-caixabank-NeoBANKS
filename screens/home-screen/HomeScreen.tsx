@@ -50,10 +50,10 @@ export function HomeScreen({ navigation }: RootTabScreenProps<"Root">) {
           alignTitle="flex-start"
         >
           <TabsContainer>
-            <TabButton type="secondary" focused>
+            <TabButton type="underline" focused>
               <TabText type="label-large">Monthly</TabText>
             </TabButton>
-            <TabButton type="secondary">
+            <TabButton type="underline">
               <TabText type="label-large">Daily</TabText>
             </TabButton>
           </TabsContainer>
