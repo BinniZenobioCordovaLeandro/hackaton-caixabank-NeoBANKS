@@ -8,13 +8,19 @@ export const ScreenContainer = styled(Screen)`
   justify-content: center;
 `;
 
+export const Row = styled(View)`
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const Separator = styled(View)`
   margin-vertical: 30px;
   height: 1px;
   width: 80px;
 `;
 
-export const Title = styled(Text)`
+export const TitleLogo = styled(Text)`
   font-size: 20px;
   font-weight: bold;
 `;
