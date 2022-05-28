@@ -69,7 +69,11 @@ export function Text(props: TextProps) {
   }
   return (
     <DefaultText
-      style={[{ color }, style, { fontSize: textSize }]}
+      style={[
+        { color },
+        style,
+        { fontSize: textSize, fontFamily: "Montserrat", letterSpacing: 0.01 },
+      ]}
       {...otherProps}
     />
   );

@@ -21,6 +21,19 @@ export const Separator = styled(View)`
 `;
 
 export const TitleLogo = styled(Text)`
-  font-size: 20px;
+  font-weight: bold;
+  color: #4A35C5};
+`;
+
+export const TitleContainer = styled(Screen)`
+  align-items: center;
+  justify-content: center;
+`;
+
+export const TitleTransaction = styled(Text)`
+  font-weight: bold;
+`;
+
+export const BodyTransaction = styled(Text)`
   font-weight: bold;
 `;
