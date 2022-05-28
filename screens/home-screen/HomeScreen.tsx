@@ -12,6 +12,9 @@ import {
   ScreenContainer,
   SmallCard,
   StageTextCard,
+  TabButton,
+  TabsContainer,
+  TabText,
   TitleContainer,
   TitleLogo,
   TitleTransaction,
@@ -44,8 +47,16 @@ export function HomeScreen({ navigation }: RootTabScreenProps<"Root">) {
         <CardGraphic
           title="Transactions last year"
           type="shadow"
-          alignTitle="left"
+          alignTitle="flex-start"
         >
+          <TabsContainer>
+            <TabButton type="secondary" focused>
+              <TabText type="label-large">Monthly</TabText>
+            </TabButton>
+            <TabButton type="secondary">
+              <TabText type="label-large">Daily</TabText>
+            </TabButton>
+          </TabsContainer>
           <Chart name="interactiveLine" />
         </CardGraphic>
       </CardHistoryContainer>

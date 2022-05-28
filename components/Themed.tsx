@@ -7,6 +7,7 @@ import {
   ScrollView,
   Text as DefaultText,
   View as DefaultView,
+  TouchableWithoutFeedback as DefaultTouchableWithoutFeedback,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -48,6 +49,12 @@ export type ViewProps = ThemeProps & DefaultView["props"];
 export type ViewContainerProps = ThemeProps &
   DefaultView["props"] & {
     withBackground?: boolean;
+  };
+
+export type ButtonProps = ThemeProps &
+  DefaultTouchableWithoutFeedback["props"] & {
+    type?: "primary" | "secondary" | "tertiary";
+    focused?: boolean;
   };
 
 export function Text(props: TextProps) {
@@ -141,5 +148,54 @@ export function Screen(props: ViewProps) {
         <DefaultView style={[{ backgroundColor }, style]} {...otherProps} />
       </SafeAreaView>
     </ScrollView>
+  );
+}
+
+export function Button(props: ButtonProps) {
+  const {
+    style,
+    type,
+    focused = true,
+    lightColor,
+    darkColor,
+    ...otherProps
+  } = props;
+
+  let localStyle = {};
+  if (type) {
+    switch (props.type) {
+      case "primary":
+        localStyle = {
+          backgroundColor: useThemeColor(
+            { light: lightColor, dark: darkColor },
+            "background",
+          ),
+        };
+        break;
+
+      case "secondary":
+        localStyle = {
+          height: 61,
+          borderStyle: "solid",
+          borderBottomColor: focused ? "#6979F8" : undefined,
+          borderBottomWidth: 5,
+          justifyContent: "center",
+          alignItems: "center",
+          alignContent: "center",
+        };
+        break;
+
+      default:
+        localStyle = {};
+        break;
+    }
+  }
+
+  return (
+    <DefaultTouchableWithoutFeedback style={[localStyle, style, { ...props }]}>
+      <ViewContainer style={[localStyle, style]}>
+        {props.children}
+      </ViewContainer>
+    </DefaultTouchableWithoutFeedback>
   );
 }
