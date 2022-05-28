@@ -1,3 +1,4 @@
+import React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 
 import { Text, View } from "../components/Themed";
@@ -8,7 +9,7 @@ export default function NotFoundScreen({
 }: RootStackScreenProps<"NotFound">) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>This screen doesn't exist.</Text>
+      <Text style={styles.title}>This screen does not exist.</Text>
       <TouchableOpacity
         onPress={() => navigation.replace("Root")}
         style={styles.link}

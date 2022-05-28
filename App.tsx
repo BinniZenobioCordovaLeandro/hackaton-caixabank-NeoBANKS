@@ -1,3 +1,4 @@
+import React from "react";
 import "@expo/match-media";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
