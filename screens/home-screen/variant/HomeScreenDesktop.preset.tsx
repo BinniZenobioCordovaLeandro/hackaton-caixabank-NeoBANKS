@@ -79,8 +79,12 @@ export const CardPieContainer = styled(ViewContainer)`
 export const CardHistoryContainer = styled(ViewContainer)``;
 
 export const CardGraphic = styled(Card)`
-  flex: 1;
   min-height: 325px;
+`;
+
+export const PieChartWrapper = styled(ViewContainer)`
+  padding-top: 32px;
+  padding-bottom: 48px;
 `;
 
 export const LargeCellContainer = styled(ViewContainer)`
