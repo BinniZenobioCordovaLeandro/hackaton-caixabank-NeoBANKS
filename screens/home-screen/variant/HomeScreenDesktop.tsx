@@ -1,4 +1,6 @@
 import React from "react";
+import Chart from "../../../components/chart/chart";
+import { PieChart } from "../../../components/chart/pie.chart";
 import Icon from "../../../components/icon/icon";
 import { RootTabScreenProps } from "../../../types";
 import {
@@ -13,6 +15,7 @@ import {
   LabelTextCard,
   LargeCellContainer,
   LogoContainer,
+  PieChartWrapper,
   ScreenContainer,
   SmallCard,
   SmallCellContainer,
@@ -50,7 +53,35 @@ export function HomeScreenDesktop({ navigation }: RootTabScreenProps<"Root">) {
             </SmallCard>
           </CardResumeContainer>
           <CardPieContainer>
-            <CardGraphic title="Transactions last year"></CardGraphic>
+            <CardGraphic title="Transactions last year">
+              <PieChartWrapper>
+                <Chart
+                  name="pie"
+                  data={[
+                    {
+                      key: 2,
+                      amount: 35,
+                      svg: { fill: "#9013FE" },
+                    },
+                    {
+                      key: 3,
+                      amount: 45,
+                      svg: { fill: "#007AFF" },
+                    },
+                    {
+                      key: 4,
+                      amount: 10,
+                      svg: { fill: "#FB8832" },
+                    },
+                    {
+                      key: 5,
+                      amount: 20,
+                      svg: { fill: "#E6E5E6" },
+                    },
+                  ]}
+                />
+              </PieChartWrapper>
+            </CardGraphic>
           </CardPieContainer>
         </SmallCellContainer>
         <LargeCellContainer>
