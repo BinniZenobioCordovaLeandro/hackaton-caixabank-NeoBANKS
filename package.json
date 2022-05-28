@@ -13,6 +13,11 @@
     "lint-and-fix": "eslint . --ext .ts,.tsx,.js,.jsx,.json --fix",
     "prettier-format": "prettier --config .prettierrc '**/*.{json,js,jsx,ts,tsx,css,scss,md}' --write"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier-format && npm run lint"
+    }
+  },
   "jest": {
     "preset": "jest-expo"
   },
@@ -53,6 +58,7 @@
     "eslint-plugin-jest": "^26.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
+    "husky": "^8.0.1",
     "jest": "^26.6.3",
     "jest-expo": "~45.0.0",
     "prettier": "^2.6.2",
