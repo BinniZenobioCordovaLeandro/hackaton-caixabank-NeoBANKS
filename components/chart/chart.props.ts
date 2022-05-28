@@ -1,4 +1,4 @@
 export interface ChartProps {
   data?: any[];
-  name?: "pie" | "bar" | "line";
+  name?: "pie" | "bar" | "line" | "interactiveLine";
 }

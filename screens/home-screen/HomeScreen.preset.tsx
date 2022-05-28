@@ -62,7 +62,7 @@ export const LabelTextCard = styled(Text)`
 export const CardHistoryContainer = styled(ViewContainer)`
   flex-direction: row;
   margin-top: 37px;
-  margin-bottom: 51px;
+  margin-bottom: 100px;
 `;
 
 export const CardGraphic = styled(Card)`
