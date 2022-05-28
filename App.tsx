@@ -3,11 +3,10 @@ import "@expo/match-media";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useMediaQuery } from "react-responsive";
-import { Text } from "./components/Themed";
 
 import useCachedResources from "./hooks/useCachedResources";
 import useColorScheme from "./hooks/useColorScheme";
-import Navigation from "./navigation";
+import { Navigation, NavigationDesktop } from "./navigation";
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -27,6 +26,6 @@ export default function App() {
           <StatusBar />
         </SafeAreaProvider>
       );
-    return <Text>Navigation stack to desktop, without status bar</Text>;
+    return <NavigationDesktop colorScheme={colorScheme} />;
   }
 }
