@@ -1,15 +1,22 @@
 import React from "react";
 import styled from "styled-components/native";
-import { Text, ViewContainer, Screen } from "../../components/Themed";
-import { Card } from "../../components/card/card";
+import { Text, ViewContainer, Screen } from "../../../components/Themed";
+import { Card } from "../../../components/card/card";
 
-export const ScreenContainer = styled(Screen)`
-  padding: 0px 25px;
+export const ScreenContainer = styled(Screen)``;
+
+export const HeaderContainer = styled(ViewContainer)`
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 32px 25px;
 `;
 
 export const LogoContainer = styled(ViewContainer)`
   flex-direction: row;
-  margin-top: 20px;
+`;
+
+export const ActionsContainer = styled(ViewContainer)`
+  flex-direction: row;
 `;
 
 export const TitleLogo = styled(Text)`
@@ -20,10 +27,13 @@ export const TitleLogo = styled(Text)`
   color: ${"#4A35C5"};
 `;
 
+export const BodyContainer = styled(ViewContainer)`
+  flex-direction: row;
+  padding: 24px 25px 30px 25px;
+`;
+
 export const TitleContainer = styled(ViewContainer)`
-  align-items: center;
-  justify-content: center;
-  margin-top: 18px;
+  padding: 18px 25px;
 `;
 
 export const TitleTransaction = styled(Text)`
@@ -36,10 +46,13 @@ export const BodyTransaction = styled(Text)`
   line-height: 24px;
 `;
 
+export const SmallCellContainer = styled(ViewContainer)`
+  flex: 3;
+`;
+
 export const CardResumeContainer = styled(ViewContainer)`
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 23px;
 `;
 
 export const SmallCard = styled(Card)`
@@ -59,13 +72,18 @@ export const LabelTextCard = styled(Text)`
   text-align: center;
 `;
 
-export const CardHistoryContainer = styled(ViewContainer)`
-  flex-direction: row;
-  margin-top: 37px;
-  margin-bottom: 51px;
+export const CardPieContainer = styled(ViewContainer)`
+  margin-top: 15px;
 `;
+
+export const CardHistoryContainer = styled(ViewContainer)``;
 
 export const CardGraphic = styled(Card)`
   flex: 1;
   min-height: 325px;
+`;
+
+export const LargeCellContainer = styled(ViewContainer)`
+  flex: 8;
+  margin-left: 22px;
 `;

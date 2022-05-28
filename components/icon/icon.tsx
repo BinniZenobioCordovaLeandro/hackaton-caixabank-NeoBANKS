@@ -5,6 +5,7 @@ import { BarsIcon } from "./bars.icon";
 import { CompassIcon } from "./compass.icon";
 import { IconProps } from "./icon.props";
 import { LogoIcon } from "./logo.icon";
+import { SettingIcon } from "./setting.icon";
 
 export default function Icon(props: IconProps) {
   const { name } = props;
@@ -24,6 +25,10 @@ export default function Icon(props: IconProps) {
 
     case "avatar":
       return <AvatarIcon {...props} />;
+      break;
+
+    case "setting":
+      return <SettingIcon {...props} />;
       break;
 
     default:

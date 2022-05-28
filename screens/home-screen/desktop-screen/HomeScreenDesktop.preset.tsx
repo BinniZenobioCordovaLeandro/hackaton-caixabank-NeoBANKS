@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components/native";
-import { Text, ViewContainer, Screen } from "../../components/Themed";
-import { Card } from "../../components/card/card";
+import { Text, ViewContainer, Screen } from "../../../components/Themed";
+import { Card } from "../../../components/card/card";
 
 export const ScreenContainer = styled(Screen)`
   padding: 0px 25px;
 `;
 
-export const LogoContainer = styled(ViewContainer)`
+export const LogoContainer = styled(Card)`
   flex-direction: row;
   margin-top: 20px;
 `;

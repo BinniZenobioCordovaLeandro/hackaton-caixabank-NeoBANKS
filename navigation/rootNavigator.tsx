@@ -5,7 +5,7 @@ import NotFoundScreen from "../screens/NotFoundScreen";
 import ModalScreen from "../screens/ModalScreen";
 import { BottomTabNavigator } from "./bottomTabNavigator";
 import TabTwoScreen from "../screens/TabTwoScreen";
-import { HomeScreen } from "../screens/home-screen/HomeScreen";
+import { HomeScreenDesktop } from "../screens/home-screen/variant/HomeScreenDesktop";
 
 /**
  * A root stack navigator is often used for displaying modals on top of all other content.
@@ -39,7 +39,7 @@ export function RootNavigatorDesktop() {
     <StackDesktop.Navigator>
       <StackDesktop.Screen
         name="Root"
-        component={HomeScreen}
+        component={HomeScreenDesktop}
         options={{ headerShown: false }}
       />
       <StackDesktop.Screen

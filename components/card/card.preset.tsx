@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/native";
-import { Text, View, ViewCard } from "../Themed";
+import { Text, ViewContainer, ViewCard } from "../Themed";
 import { CardProps } from "./card.props";
 
 export const CardContainer = styled(ViewCard)`
@@ -13,7 +13,7 @@ export const CardContainer = styled(ViewCard)`
     "box-shadow: 0px 16px 16px rgba(50, 50, 71, 0.08);"};
 `;
 
-export const TitleContainer = styled(View)`
+export const TitleContainer = styled(ViewContainer)`
   flex-direction: row;
   justify-content: center;
 `;
@@ -24,8 +24,8 @@ export const CardTitle = styled(Text)`
   color: ${"#171725"};
 `;
 
-export const ActionsContainer = styled(View)`
+export const ActionsContainer = styled(ViewContainer)`
   flex-direction: row;
 `;
 
-export const ChildContainer = styled(View)``;
+export const ChildContainer = styled(ViewContainer)``;
