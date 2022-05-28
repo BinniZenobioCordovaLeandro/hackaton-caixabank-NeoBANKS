@@ -57,7 +57,7 @@ export function HomeScreen({ navigation }: RootTabScreenProps<"Root">) {
               <TabText type="label-large">Daily</TabText>
             </TabButton>
           </TabsContainer>
-          <Chart name="interactiveLine" />
+          <Chart height={170} name="interactiveLine" />
         </CardGraphic>
       </CardHistoryContainer>
     </ScreenContainer>
