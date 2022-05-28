@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components/native";
 import { Text, ViewContainer, Screen, Button } from "../../components/Themed";
 import { Card } from "../../components/card/card";
-import { TouchableWithoutFeedback } from "react-native";
 
 export const ScreenContainer = styled(Screen)`
   padding: 0px 25px;

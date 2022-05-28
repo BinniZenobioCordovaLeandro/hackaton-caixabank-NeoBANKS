@@ -3,6 +3,7 @@ import { View } from "react-native";
 import { AvatarIcon } from "./avatar.icon";
 import { BarsIcon } from "./bars.icon";
 import { CompassIcon } from "./compass.icon";
+import { DotsIcon } from "./dots.icon";
 import { IconProps } from "./icon.props";
 import { LogoIcon } from "./logo.icon";
 import { SettingIcon } from "./setting.icon";
@@ -29,6 +30,10 @@ export default function Icon(props: IconProps) {
 
     case "setting":
       return <SettingIcon {...props} />;
+      break;
+
+    case "dots":
+      return <DotsIcon {...props} />;
       break;
 
     default:

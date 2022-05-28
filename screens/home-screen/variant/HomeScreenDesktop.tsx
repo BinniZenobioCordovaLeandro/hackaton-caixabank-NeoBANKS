@@ -4,6 +4,7 @@ import { PieChart } from "../../../components/chart/pie.chart";
 import Icon from "../../../components/icon/icon";
 import { RootTabScreenProps } from "../../../types";
 import {
+  ActionButton,
   ActionsContainer,
   BodyContainer,
   BodyTransaction,
@@ -53,7 +54,20 @@ export function HomeScreenDesktop({ navigation }: RootTabScreenProps<"Root">) {
             </SmallCard>
           </CardResumeContainer>
           <CardPieContainer>
-            <CardGraphic title="Transactions last year">
+            <CardGraphic
+              title="Conversion"
+              alignTitle="space-between"
+              actions={
+                <ActionButton
+                  type="outline"
+                  onPress={() => {
+                    console.log("Conversion");
+                  }}
+                >
+                  <Icon name="dots" />
+                </ActionButton>
+              }
+            >
               <PieChartWrapper>
                 <Chart
                   name="pie"
@@ -86,7 +100,7 @@ export function HomeScreenDesktop({ navigation }: RootTabScreenProps<"Root">) {
         </SmallCellContainer>
         <LargeCellContainer>
           <CardHistoryContainer>
-            <CardGraphic title="Transactions last year"></CardGraphic>
+            <CardGraphic title="Conversion"></CardGraphic>
           </CardHistoryContainer>
         </LargeCellContainer>
       </BodyContainer>
