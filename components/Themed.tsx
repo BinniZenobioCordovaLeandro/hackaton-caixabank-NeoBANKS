@@ -27,14 +27,52 @@ type ThemeProps = {
   darkColor?: string;
 };
 
-export type TextProps = ThemeProps & DefaultText["props"];
+export type TextProps = ThemeProps &
+  DefaultText["props"] & {
+    type: "h1" | "h2" | "title" | "body" | "label-large" | "label";
+  };
 export type ViewProps = ThemeProps & DefaultView["props"];
 
 export function Text(props: TextProps) {
   const { style, lightColor, darkColor, ...otherProps } = props;
   const color = useThemeColor({ light: lightColor, dark: darkColor }, "text");
 
-  return <DefaultText style={[{ color }, style]} {...otherProps} />;
+  let textSize = 12;
+  switch (props.type) {
+    case "h1":
+      textSize = 24;
+      break;
+
+    case "h2":
+      textSize = 20;
+      break;
+
+    case "title":
+      textSize = 15;
+      break;
+
+    case "body":
+      textSize = 14;
+      break;
+
+    case "label-large":
+      textSize = 12;
+      break;
+
+    case "label":
+      textSize = 11;
+      break;
+
+    default:
+      textSize = 12;
+      break;
+  }
+  return (
+    <DefaultText
+      style={[{ color }, style, { fontSize: textSize }]}
+      {...otherProps}
+    />
+  );
 }
 
 export function View(props: ViewProps) {
