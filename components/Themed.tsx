@@ -3,7 +3,12 @@
  * https://docs.expo.io/guides/color-schemes/
  */
 import React from "react";
-import { Text as DefaultText, View as DefaultView } from "react-native";
+import {
+  ScrollView,
+  Text as DefaultText,
+  View as DefaultView,
+} from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
@@ -29,7 +34,15 @@ type ThemeProps = {
 
 export type TextProps = ThemeProps &
   DefaultText["props"] & {
-    type: "h1" | "h2" | "title" | "body" | "label-large" | "label";
+    type:
+      | "h1"
+      | "h2"
+      | "h3"
+      | "h4"
+      | "title"
+      | "body"
+      | "label-large"
+      | "label";
   };
 export type ViewProps = ThemeProps & DefaultView["props"];
 
@@ -40,10 +53,18 @@ export function Text(props: TextProps) {
   let textSize = 12;
   switch (props.type) {
     case "h1":
-      textSize = 24;
+      textSize = 48;
       break;
 
     case "h2":
+      textSize = 30;
+      break;
+
+    case "h3":
+      textSize = 24;
+      break;
+
+    case "h4":
       textSize = 20;
       break;
 
@@ -69,7 +90,11 @@ export function Text(props: TextProps) {
   }
   return (
     <DefaultText
-      style={[{ color }, style, { fontSize: textSize }]}
+      style={[
+        { color },
+        style,
+        { fontSize: textSize, fontFamily: "Montserrat", letterSpacing: 0.01 },
+      ]}
       {...otherProps}
     />
   );
@@ -77,10 +102,31 @@ export function Text(props: TextProps) {
 
 export function View(props: ViewProps) {
   const { style, lightColor, darkColor, ...otherProps } = props;
+  return <DefaultView style={[style]} {...otherProps} />;
+}
+
+export function ViewCard(props: ViewProps) {
+  const { style, lightColor, darkColor, ...otherProps } = props;
   const backgroundColor = useThemeColor(
     { light: lightColor, dark: darkColor },
     "background",
   );
 
   return <DefaultView style={[{ backgroundColor }, style]} {...otherProps} />;
+}
+
+export function Screen(props: ViewProps) {
+  const { style, lightColor, darkColor, ...otherProps } = props;
+  const backgroundColor = useThemeColor(
+    { light: "#F2F6F9", dark: darkColor },
+    "background",
+  );
+
+  return (
+    <ScrollView>
+      <SafeAreaView>
+        <DefaultView style={[{ backgroundColor }, style]} {...otherProps} />
+      </SafeAreaView>
+    </ScrollView>
+  );
 }

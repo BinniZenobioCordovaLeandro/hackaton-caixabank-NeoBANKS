@@ -4,7 +4,7 @@ import { IconProps } from "./icon.props";
 
 export function LogoIcon({ width = 69, height = 24 }: IconProps) {
   return (
-    <Svg width={width} height={24} viewBox="0 0 69 24" fill="none">
+    <Svg width={width} height={height} viewBox="0 0 69 24" fill="none">
       <Path
         fillRule="evenodd"
         clipRule="evenodd"

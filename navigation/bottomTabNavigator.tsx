@@ -7,6 +7,7 @@ import TabOneScreen from "../screens/TabOneScreen";
 import { FontAwesome } from "@expo/vector-icons";
 import { Pressable } from "react-native";
 import TabTwoScreen from "../screens/TabTwoScreen";
+import { HomeScreen } from "../screens/home-screen/HomeScreen";
 
 /**
  * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
@@ -19,33 +20,15 @@ export function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="Root"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
       }}
     >
       <BottomTab.Screen
-        name="TabOne"
-        component={TabOneScreen}
-        options={({ navigation }: RootTabScreenProps<"TabOne">) => ({
-          title: "Tab One",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Pressable
-              onPress={() => navigation.navigate("Modal")}
-              style={({ pressed }) => ({
-                opacity: pressed ? 0.5 : 1,
-              })}
-            >
-              <FontAwesome
-                name="info-circle"
-                size={25}
-                color={Colors[colorScheme].text}
-                style={{ marginRight: 15 }}
-              />
-            </Pressable>
-          ),
-        })}
+        name="Root"
+        component={HomeScreen}
+        options={{ headerShown: false }}
       />
       <BottomTab.Screen
         name="TabTwo"
