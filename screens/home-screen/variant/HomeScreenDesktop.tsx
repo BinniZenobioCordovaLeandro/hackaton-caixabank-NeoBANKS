@@ -4,12 +4,15 @@ import Icon from "../../../components/icon/icon";
 import { RootTabScreenProps } from "../../../types";
 import {
   ActionButton,
+  ActionButtonCalendar,
+  ActionButtonContainer,
   ActionsContainer,
   BodyContainer,
   CardGraphic,
   CardHistoryContainer,
   CardPieContainer,
   CardResumeContainer,
+  DateText,
   HeaderContainer,
   LabelTextCard,
   LargeCellContainer,
@@ -107,14 +110,17 @@ export function HomeScreenDesktop({ navigation }: RootTabScreenProps<"Root">) {
               titleType="h3"
               alignTitle="space-between"
               actions={
-                <ActionButton
+                <ActionButtonCalendar
                   type="outline"
                   onPress={() => {
-                    console.log("Conversion");
+                    console.log("show datepicker");
                   }}
                 >
-                  <Icon name="dots" />
-                </ActionButton>
+                  <ActionButtonContainer>
+                    <DateText type="body">Oct - Nov 2019</DateText>
+                    <Icon name="calendar" />
+                  </ActionButtonContainer>
+                </ActionButtonCalendar>
               }
             >
               <Chart

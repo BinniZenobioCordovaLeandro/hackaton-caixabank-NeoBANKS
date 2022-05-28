@@ -106,6 +106,20 @@ export const ActionButton = styled(Button)`
   width: 32px;
 `;
 
+export const ActionButtonCalendar = styled(Button)`
+  height: 32px;
+  padding-horizontal: 16px;
+`;
+
+export const ActionButtonContainer = styled(Button)`
+  flex-direction: row;
+`;
+
+export const DateText = styled(Text)`
+  color: ${"#9C9C9C"};
+  margin-right: 8px;
+`;
+
 export const ResumeChartContainer = styled(ViewContainer)`
   margin-top: 61px;
 `;
