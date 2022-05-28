@@ -15,7 +15,6 @@ export const CardContainer = styled(ViewCard)`
 
 export const TitleContainer = styled(ViewContainer)`
   flex-direction: row;
-  justify-content: center;
 `;
 
 export const CardTitle = styled(Text)`

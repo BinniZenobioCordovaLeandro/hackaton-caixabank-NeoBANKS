@@ -1,4 +1,5 @@
 import React from "react";
+import Chart from "../../components/chart/chart";
 import Icon from "../../components/icon/icon";
 import { RootTabScreenProps } from "../../types";
 import {
@@ -40,7 +41,13 @@ export function HomeScreen({ navigation }: RootTabScreenProps<"Root">) {
         </SmallCard>
       </CardResumeContainer>
       <CardHistoryContainer>
-        <CardGraphic title="Transactions last year" type="shadow"></CardGraphic>
+        <CardGraphic
+          title="Transactions last year"
+          type="shadow"
+          alignTitle="left"
+        >
+          <Chart name="interactiveLine" />
+        </CardGraphic>
       </CardHistoryContainer>
     </ScreenContainer>
   );

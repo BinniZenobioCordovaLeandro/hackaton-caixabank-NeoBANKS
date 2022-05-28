@@ -15,15 +15,15 @@ export const Card = (props: CardProps) => {
     children,
     actions,
     onlyContent = false,
-    type = "shadow",
+    alignTitle = "center",
   } = props;
 
   return (
     <CardContainer {...props}>
       {!onlyContent && (
-        <TitleContainer>
+        <TitleContainer style={{ justifyContent: alignTitle }}>
           <CardTitle type={titleType}>{title}</CardTitle>
-          <ActionsContainer>{actions}</ActionsContainer>
+          {actions && <ActionsContainer>{actions}</ActionsContainer>}
         </TitleContainer>
       )}
       <ChildContainer>{children}</ChildContainer>
