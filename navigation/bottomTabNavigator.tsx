@@ -1,13 +1,12 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { RootTabParamList, RootTabScreenProps } from "../types";
+import { RootTabParamList } from "../types";
 import useColorScheme from "../hooks/useColorScheme";
 import Colors from "../constants/Colors";
-import TabOneScreen from "../screens/TabOneScreen";
 import { FontAwesome } from "@expo/vector-icons";
-import { Pressable } from "react-native";
 import TabTwoScreen from "../screens/TabTwoScreen";
 import { HomeScreen } from "../screens/home-screen/HomeScreen";
+import Icon from "../components/icon/icon";
 
 /**
  * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
@@ -22,32 +21,45 @@ export function BottomTabNavigator() {
     <BottomTab.Navigator
       initialRouteName="Root"
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme].tint,
+        tabBarActiveTintColor: "#FFFFFF",
+        tabBarInactiveTintColor: "#E7F1FF",
+        tabBarShowLabel: false,
+        tabBarStyle: {
+          position: "absolute",
+          bottom: 20,
+          left: 10,
+          right: 10,
+          backgroundColor: "#2D14C4",
+          height: 62,
+          borderRadius: 31,
+          alignContent: "center",
+        },
       }}
     >
       <BottomTab.Screen
         name="Root"
         component={HomeScreen}
-        options={{ headerShown: false }}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color }) => <Icon name="bars" stroke={color} />,
+        }}
       />
       <BottomTab.Screen
         name="TabTwo"
         component={TabTwoScreen}
         options={{
           title: "Tab Two",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => <Icon name="compass" stroke={color} />,
+        }}
+      />
+      <BottomTab.Screen
+        name="TabThree"
+        component={TabTwoScreen}
+        options={{
+          title: "Tab Two",
+          tabBarIcon: ({ color }) => <Icon name="avatar" stroke={color} />,
         }}
       />
     </BottomTab.Navigator>
   );
-}
-
-/**
- * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
- */
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>["name"];
-  color: string;
-}) {
-  return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
 }
