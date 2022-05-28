@@ -4,5 +4,4 @@ dist
 .expo-shared
 web-build
 *.config.js
-*test.js
 types.tsx
