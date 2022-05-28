@@ -28,25 +28,7 @@ export function BottomTabNavigator() {
       <BottomTab.Screen
         name="Root"
         component={HomeScreen}
-        options={({ navigation }: RootTabScreenProps<"Root">) => ({
-          title: "Home Screen",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
-          headerRight: () => (
-            <Pressable
-              onPress={() => navigation.navigate("Modal")}
-              style={({ pressed }) => ({
-                opacity: pressed ? 0.5 : 1,
-              })}
-            >
-              <FontAwesome
-                name="info-circle"
-                size={25}
-                color={Colors[colorScheme].text}
-                style={{ marginRight: 15 }}
-              />
-            </Pressable>
-          ),
-        })}
+        options={{ headerShown: false }}
       />
       <BottomTab.Screen
         name="TabTwo"

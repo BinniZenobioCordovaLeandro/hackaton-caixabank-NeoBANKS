@@ -40,7 +40,7 @@ export function RootNavigatorDesktop() {
       <StackDesktop.Screen
         name="Root"
         component={HomeScreen}
-        options={{ title: "HomeScreen" }}
+        options={{ headerShown: false }}
       />
       <StackDesktop.Screen
         name="TabTwo"

@@ -19,7 +19,12 @@ export const Card = (props: CardProps) => {
   } = props;
 
   return (
-    <CardContainer {...props}>
+    <CardContainer
+      style={{
+        shadowOffset: { width: 11, height: 11 },
+      }}
+      {...props}
+    >
       {!onlyContent && (
         <TitleContainer>
           <CardTitle type={titleType}>{title}</CardTitle>

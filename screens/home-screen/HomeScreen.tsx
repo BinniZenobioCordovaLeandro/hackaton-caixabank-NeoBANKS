@@ -1,11 +1,16 @@
 import React from "react";
-import { ScreenContainer } from "react-native-screens";
 import Icon from "../../components/icon/icon";
 import { RootTabScreenProps } from "../../types";
 import {
   BodyTransaction,
-  Row,
-  Separator,
+  CardGraphic,
+  CardHistoryContainer,
+  CardResumeContainer,
+  LabelTextCard,
+  LogoContainer,
+  ScreenContainer,
+  SmallCard,
+  StageTextCard,
   TitleContainer,
   TitleLogo,
   TitleTransaction,
@@ -14,17 +19,29 @@ import {
 export function HomeScreen({ navigation }: RootTabScreenProps<"Root">) {
   return (
     <ScreenContainer>
-      <Row>
-        <Icon name="logo" height={24} />
+      <LogoContainer>
+        <Icon name="logo" height={20} />
         <TitleLogo type="h2">BANKS</TitleLogo>
-      </Row>
+      </LogoContainer>
       <TitleContainer>
-        <TitleTransaction type="h1">Transactions history</TitleTransaction>
+        <TitleTransaction type="h3">Transactions history</TitleTransaction>
         <BodyTransaction type="body">
           These are your monthly and daily actions. ️📊
         </BodyTransaction>
       </TitleContainer>
-      <Separator lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
+      <CardResumeContainer>
+        <SmallCard title="Transactions">
+          <StageTextCard type="h1">35</StageTextCard>
+          <LabelTextCard type="label">LAST MONTH</LabelTextCard>
+        </SmallCard>
+        <SmallCard title="Transactions">
+          <StageTextCard type="h1">3</StageTextCard>
+          <LabelTextCard type="label">TODAY</LabelTextCard>
+        </SmallCard>
+      </CardResumeContainer>
+      <CardHistoryContainer>
+        <CardGraphic title="Transactions last year"></CardGraphic>
+      </CardHistoryContainer>
     </ScreenContainer>
   );
 }
