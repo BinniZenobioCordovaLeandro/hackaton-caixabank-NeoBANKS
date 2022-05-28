@@ -4,8 +4,8 @@ import { RootStackParamList } from "../types";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import ModalScreen from "../screens/ModalScreen";
 import { BottomTabNavigator } from "./bottomTabNavigator";
-import TabOneScreen from "../screens/TabOneScreen";
 import TabTwoScreen from "../screens/TabTwoScreen";
+import { HomeScreen } from "../screens/home-screen/HomeScreen";
 
 /**
  * A root stack navigator is often used for displaying modals on top of all other content.
@@ -39,8 +39,8 @@ export function RootNavigatorDesktop() {
     <StackDesktop.Navigator>
       <StackDesktop.Screen
         name="Root"
-        component={TabOneScreen}
-        options={{ title: "Tab One" }}
+        component={HomeScreen}
+        options={{ title: "HomeScreen" }}
       />
       <StackDesktop.Screen
         name="TabTwo"
