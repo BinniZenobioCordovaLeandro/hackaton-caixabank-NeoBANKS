@@ -97,11 +97,27 @@ export const PieChartWrapper = styled(ViewContainer)`
 `;
 
 export const LargeCellContainer = styled(ViewContainer)`
-  float: left;
+  flex: 1;
   margin-left: 22px;
 `;
 
 export const ActionButton = styled(Button)`
   height: 32px;
   width: 32px;
+`;
+
+export const ResumeChartContainer = styled(ViewContainer)`
+  margin-top: 61px;
+`;
+
+export const RevenueText = styled(Text)`
+  color: ${"#9C9C9C"};
+`;
+
+export const RevenueAmount = styled(Text)`
+  color: ${"#333333"};
+`;
+
+export const PositivePercentage = styled(Text)`
+  color: ${"#4AAF05"};
 `;

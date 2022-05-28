@@ -19,22 +19,20 @@ import {
   Text as SvgText,
 } from "react-native-svg";
 import * as shape from "d3-shape";
+import { ChartProps } from "./chart.props";
 
-export function InteractiveLineChart() {
+export function InteractiveLineChart(props: ChartProps) {
   const apx = (size = 0) => {
-    const width = Dimensions.get("window").width;
+    const width = props.width || 300;
     return (width / 750) * size;
   };
 
-  const [dateList, setDateList] = useState([
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-  ]);
-  const [priceList, setPriceList] = useState([26, 27, 28, 26, 27, 26]);
+  const [dateList, setDateList] = useState(
+    props.dateList || ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+  );
+  const [priceList, setPriceList] = useState(
+    props.priceList || [26, 27, 28, 26, 27, 26],
+  );
 
   const size = useRef(dateList.length);
 
@@ -110,7 +108,7 @@ export function InteractiveLineChart() {
     <Path
       key="line"
       d={line}
-      stroke="#6979F8"
+      stroke="#2D14C4"
       strokeWidth={apx(6)}
       fill="none"
     />
@@ -119,8 +117,8 @@ export function InteractiveLineChart() {
   const CustomGradient = () => (
     <Defs key="gradient">
       <LinearGradient id="gradient" x1="0" x2="0%" y2="100%">
-        <Stop offset="0%" stopColor="#6979F8" stopOpacity={0.25} />
-        <Stop offset="100%" stopColor="#6979F8" stopOpacity={0} />
+        <Stop offset="0%" stopColor="#2D14C4" stopOpacity={1} />
+        <Stop offset="100%" stopColor="#FFFFFF" stopOpacity={1} />
       </LinearGradient>
     </Defs>
   );
@@ -196,7 +194,7 @@ export function InteractiveLineChart() {
         style={{
           flexDirection: "row",
           width: apx(750),
-          height: apx(570),
+          height: props.height,
           alignSelf: "stretch",
         }}
       >
@@ -204,7 +202,7 @@ export function InteractiveLineChart() {
           style={{ width: apx(100) }}
           data={priceList}
           contentInset={verticalContentInset}
-          svg={{ fontSize: apx(20), fill: "#999999" }}
+          svg={{ fontSize: 12, fill: "#999999" }}
         />
         <View style={{ flex: 1 }} {...panResponder.current.panHandlers}>
           <AreaChart
@@ -217,7 +215,7 @@ export function InteractiveLineChart() {
           >
             <CustomLine />
             <CustomGrid />
-            {/* <CustomGradient /> */}
+            {props.gradient && <CustomGradient />}
             <Tooltip />
           </AreaChart>
           <XAxis
@@ -225,7 +223,7 @@ export function InteractiveLineChart() {
               alignSelf: "stretch",
               // marginTop: apx(57),
               width: apx(750),
-              height: apx(60),
+              height: apx(20),
             }}
             numberOfTicks={6}
             data={priceList}
@@ -235,9 +233,9 @@ export function InteractiveLineChart() {
               right: apx(130),
             }}
             svg={{
-              fontSize: apx(20),
+              fontSize: 12,
               fill: "#999999",
-              y: apx(20),
+              y: apx(0),
               // originY: 30,
             }}
           />

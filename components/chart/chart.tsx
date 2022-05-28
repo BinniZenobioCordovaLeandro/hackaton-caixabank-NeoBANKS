@@ -13,7 +13,7 @@ export default function Chart(props: ChartProps) {
       break;
 
     case "interactiveLine":
-      return <InteractiveLineChart />;
+      return <InteractiveLineChart {...props} />;
       break;
 
     default:
