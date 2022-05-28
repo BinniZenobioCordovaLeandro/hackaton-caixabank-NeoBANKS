@@ -30,17 +30,17 @@ export function HomeScreen({ navigation }: RootTabScreenProps<"Root">) {
         </BodyTransaction>
       </TitleContainer>
       <CardResumeContainer>
-        <SmallCard title="Transactions">
+        <SmallCard title="Transactions" type="shadow">
           <StageTextCard type="h1">35</StageTextCard>
           <LabelTextCard type="label">LAST MONTH</LabelTextCard>
         </SmallCard>
-        <SmallCard title="Transactions">
+        <SmallCard title="Transactions" type="shadow">
           <StageTextCard type="h1">3</StageTextCard>
           <LabelTextCard type="label">TODAY</LabelTextCard>
         </SmallCard>
       </CardResumeContainer>
       <CardHistoryContainer>
-        <CardGraphic title="Transactions last year"></CardGraphic>
+        <CardGraphic title="Transactions last year" type="shadow"></CardGraphic>
       </CardHistoryContainer>
     </ScreenContainer>
   );

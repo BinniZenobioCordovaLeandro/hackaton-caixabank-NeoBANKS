@@ -8,6 +8,7 @@ import {
   Text as DefaultText,
   View as DefaultView,
 } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
@@ -123,7 +124,9 @@ export function Screen(props: ViewProps) {
 
   return (
     <ScrollView>
-      <DefaultView style={[{ backgroundColor }, style]} {...otherProps} />
+      <SafeAreaView>
+        <DefaultView style={[{ backgroundColor }, style]} {...otherProps} />
+      </SafeAreaView>
     </ScrollView>
   );
 }
