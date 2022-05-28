@@ -1,13 +1,11 @@
 import React from "react";
 import Chart from "../../../components/chart/chart";
-import { PieChart } from "../../../components/chart/pie.chart";
 import Icon from "../../../components/icon/icon";
 import { RootTabScreenProps } from "../../../types";
 import {
   ActionButton,
   ActionsContainer,
   BodyContainer,
-  BodyTransaction,
   CardGraphic,
   CardHistoryContainer,
   CardPieContainer,
@@ -17,6 +15,10 @@ import {
   LargeCellContainer,
   LogoContainer,
   PieChartWrapper,
+  PositivePercentage,
+  ResumeChartContainer,
+  RevenueAmount,
+  RevenueText,
   ScreenContainer,
   SmallCard,
   SmallCellContainer,
@@ -100,7 +102,69 @@ export function HomeScreenDesktop({ navigation }: RootTabScreenProps<"Root">) {
         </SmallCellContainer>
         <LargeCellContainer>
           <CardHistoryContainer>
-            <CardGraphic title="Conversion"></CardGraphic>
+            <CardGraphic
+              title="Weekly  expenses"
+              titleType="h3"
+              alignTitle="space-between"
+              actions={
+                <ActionButton
+                  type="outline"
+                  onPress={() => {
+                    console.log("Conversion");
+                  }}
+                >
+                  <Icon name="dots" />
+                </ActionButton>
+              }
+            >
+              <Chart
+                name="interactiveLine"
+                height={500}
+                width={1300}
+                dateList={[
+                  "Mon",
+                  "Tue",
+                  "Wed",
+                  "Thu",
+                  "Fri",
+                  "Sat",
+                  "Sun",
+                  "Mon",
+                  "Tue",
+                  "Wed",
+                  "Thu",
+                  "Fri",
+                  "Sat",
+                  "Sun",
+                  "Mon",
+                  "Tue",
+                  "Wed",
+                  "Thu",
+                  "Fri",
+                  "Sat",
+                  "Sun",
+                  "Mon",
+                  "Tue",
+                  "Wed",
+                  "Thu",
+                  "Fri",
+                  "Sat",
+                  "Sun",
+                ]}
+                priceList={[
+                  0, 10, 20, 30, 40, 10, 30, 0, 10, 20, 30, 40, 10, 30, 0, 10,
+                  20, 30, 40, 10, 30, 0, 10, 20, 30, 40, 10, 30,
+                ]}
+                gradient
+              />
+              <ResumeChartContainer>
+                <RevenueText type="label-large">Total Revenue</RevenueText>
+                <RevenueAmount type="h3">$76685.41</RevenueAmount>
+                <PositivePercentage type="label-large">
+                  {"7,00%"}
+                </PositivePercentage>
+              </ResumeChartContainer>
+            </CardGraphic>
           </CardHistoryContainer>
         </LargeCellContainer>
       </BodyContainer>
