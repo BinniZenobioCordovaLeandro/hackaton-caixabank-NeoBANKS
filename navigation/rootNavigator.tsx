@@ -5,7 +5,7 @@ import NotFoundScreen from "../screens/NotFoundScreen";
 import ModalScreen from "../screens/ModalScreen";
 import { BottomTabNavigator } from "./bottomTabNavigator";
 import TabTwoScreen from "../screens/TabTwoScreen";
-import { HomeScreenDesktop } from "../screens/home-screen/variant/HomeScreenDesktop";
+import { HomeScreenDesktop } from "../screens/home-screen/HomeScreen.desktop";
 
 /**
  * A root stack navigator is often used for displaying modals on top of all other content.

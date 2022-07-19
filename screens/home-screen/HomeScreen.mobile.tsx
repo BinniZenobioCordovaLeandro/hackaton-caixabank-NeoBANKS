@@ -18,9 +18,9 @@ import {
   TitleContainer,
   TitleLogo,
   TitleTransaction,
-} from "./HomeScreen.preset";
+} from "./HomeScreen.mobile.preset";
 
-export function HomeScreen({ navigation }: RootTabScreenProps<"Root">) {
+export function HomeScreenMobile({ navigation }: RootTabScreenProps<"Root">) {
   return (
     <ScreenContainer>
       <LogoContainer>

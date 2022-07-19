@@ -2,12 +2,12 @@ import React from "react";
 import "@expo/match-media";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { useMediaQuery } from "react-responsive";
 
 import useCachedResources from "./hooks/useCachedResources";
 import useColorScheme from "./hooks/useColorScheme";
 import { Navigation, NavigationDesktop } from "./navigation";
 import { useFonts } from "expo-font";
+import { useLayout } from "./hooks/useLayout";
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -16,15 +16,12 @@ export default function App() {
     Montserrat: require("./assets/fonts/Montserrat-VariableFont_wght.ttf"),
   });
 
-  const isTabletOrMobileDevice = useMediaQuery({
-    maxDeviceWidth: 1224,
-    query: "(max-device-width: 1224px)",
-  });
+  const layout = useLayout();
 
   if (!isLoadingComplete && !loaded) {
     return null;
   } else {
-    if (isTabletOrMobileDevice)
+    if (layout.isMobile || layout.isTablet)
       return (
         <SafeAreaProvider>
           <Navigation colorScheme={colorScheme} />

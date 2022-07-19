@@ -1,7 +1,7 @@
 import React from "react";
-import Chart from "../../../components/chart/chart";
-import Icon from "../../../components/icon/icon";
-import { RootTabScreenProps } from "../../../types";
+import Chart from "../../components/chart/chart";
+import Icon from "../../components/icon/icon";
+import { RootTabScreenProps } from "../../types";
 import {
   ActionButton,
   ActionButtonCalendar,
@@ -29,7 +29,7 @@ import {
   TitleContainer,
   TitleLogo,
   TitleTransaction,
-} from "./HomeScreenDesktop.preset";
+} from "./HomeScreen.desktop.preset";
 
 export function HomeScreenDesktop({ navigation }: RootTabScreenProps<"Root">) {
   return (

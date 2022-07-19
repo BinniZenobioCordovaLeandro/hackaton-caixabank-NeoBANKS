@@ -1,12 +1,7 @@
 import React from "react";
 import styled from "styled-components/native";
-import {
-  Text,
-  ViewContainer,
-  Screen,
-  Button,
-} from "../../../components/Themed";
-import { Card } from "../../../components/card/card";
+import { Text, ViewContainer, Screen, Button } from "../../components/Themed";
+import { Card } from "../../components/card/card";
 
 export const ScreenContainer = styled(Screen)``;
 
